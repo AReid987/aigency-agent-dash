@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGENCY - Collaboratory</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 262 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M131 251.5C197.572 251.5 251.5 197.572 251.5 131C251.5 64.4284 197.572 10.5 131 10.5C64.4284 10.5 10.5 64.4284 10.5 131C10.5 197.572 64.4284 251.5 131 251.5Z" stroke="#58a6ff" stroke-width="20"/>
+                    <path d="M96.7998 191L131 51L165.2 191" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M150.3 146.2H111.7" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>AIGENCY</h1>
+            </div>
+            <div class="mission-status">
+                <span>STATUS:</span>
+                <span id="mission-status-text">AWAITING COMMAND</span>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <div class="mission-control" id="collaboratory">
+                <div id="mission-header">
+                    <h2 id="current-objective">OBJECTIVE: STANDING BY</h2>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <span id="progress-text">0% COMPLETE</span>
+                </div>
+                <div id="chat-container">
+                    <div id="chat-messages">
+                       <!-- AI and user messages will be appended here -->
+                    </div>
+                </div>
+                <form id="chat-form">
+                    <textarea id="chat-input" placeholder="Describe your mission objective..." required></textarea>
+                    <button type="submit" id="send-btn" aria-label="Send message">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="agents-view">
+                <div class="agents-grid">
+                    <!-- Sentinel -->
+                    <div class="agent-card" id="agent-sentinel">
+                        <div class="agent-avatar"></div>
+                        <h3>SENTINEL</h3>
+                        <p>Platform Engineer</p>
+                    </div>
+                    <div class="module" id="module-sentinel">
+                        <div class="module-header">SYSTEM LOGS & INFRA</div>
+                        <div class="module-content"><pre class="content-pre"></pre></div>
+                    </div>
+
+                    <!-- Cipher -->
+                    <div class="agent-card" id="agent-cipher">
+                        <div class="agent-avatar"></div>
+                        <h3>CIPHER</h3>
+                        <p>Data Analyst</p>
+                    </div>
+                    <div class="module" id="module-cipher">
+                        <div class="module-header">DATA & LOGIC</div>
+                        <div class="module-content"><pre class="content-pre"></pre></div>
+                    </div>
+
+                    <!-- Pixel -->
+                    <div class="agent-card" id="agent-pixel">
+                        <div class="agent-avatar"></div>
+                        <h3>PIXEL</h3>
+                        <p>UX Engineer</p>
+                    </div>
+                    <div class="module" id="module-pixel">
+                        <div class="module-header">UI/UX WIREFRAME</div>
+                        <div class="module-content" id="pixel-content"></div>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <!-- Helios -->
+                    <div class="agent-card" id="agent-helios">
+                        <div class="agent-avatar"></div>
+                        <h3>HELIOS</h3>
+                        <p>System Architect</p>
+                    </div>
+                    <div class="module" id="module-helios">
+                        <div class="module-header">ARCHITECTURE</div>
+                        <div class="module-content"><pre class="content-pre"></pre></div>
+                    </div>
+
+                    <!-- Juno -->
+                    <div class="agent-card" id="agent-juno">
+                        <div class="agent-avatar"></div>
+                        <h3>JUNO</h3>
+                        <p>Code Weaver</p>
+                    </div>
+                    <div class="module" id="module-juno">
+                        <div class="module-header">CODE GENERATION</div>
+                        <div class="module-content"><pre class="content-pre"></pre></div>
+                    </div>
+
+                    <!-- Nomad -->
+                    <div class="agent-card" id="agent-nomad">
+                        <div class="agent-avatar"></div>
+                        <h3>NOMAD</h3>
+                        <p>QA Specialist</p>
+                    </div>
+                    <div class="module" id="module-nomad">
+                        <div class="module-header">TESTING & QA</div>
+                        <div class="module-content"><pre class="content-pre"></pre></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
